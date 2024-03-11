@@ -35,7 +35,8 @@ public class Actions implements ActionListener{
                 }
                 break;
             case "to decimal": 
-                if (fab.getField().getText().length()>0){
+                if (fab.getField().getText().length()>0 &&
+                        !fab.getField().getText().contains("E")){
                     modifyField(null);
                     fab.changeConverter();
                 }

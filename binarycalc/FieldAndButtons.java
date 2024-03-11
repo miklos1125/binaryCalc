@@ -15,7 +15,7 @@ class TButton extends JButton{
         super(s);
     }
     
-    void tilt(){
+    void restrict(){
         this.setEnabled(false);
     }
 }
@@ -31,7 +31,7 @@ public class FieldAndButtons{
     boolean binary;
     
     private FieldAndButtons(){
-        font = new Font("Curier New", 50, 35);
+        font = new Font("Dialog", 50, 25);
         createTextField();
         createButtons();
         binary = true;
@@ -60,7 +60,9 @@ public class FieldAndButtons{
             bidec.setBackground(new Color(220,110,150));
             for(JButton b : buttons){
                 if (b instanceof TButton){
-                    ((TButton)b).tilt();
+                    ((TButton)b).restrict();
+                } else if (b.getText().equals("C")){
+                    b.setEnabled(false);
                 }
             }
 
